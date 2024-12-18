@@ -11,5 +11,10 @@ CREATE TABLE IF NOT EXISTS contents (
     PRIMARY KEY (title, content)
 );
 
+CREATE TABLE IF NOT EXISTS list (
+    title VARCHAR(255) PRIMARY KEY,
+    done BOOLEAN DEFAULT FALSE,
+    is_book BOOLEAN NOT NULL,
+)
 -- Create an index on title to optimize queries filtering by it
 CREATE INDEX IF NOT EXISTS idx_contents_title ON contents (title);
